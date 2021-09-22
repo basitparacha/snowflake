@@ -14,7 +14,7 @@ cnn = snowflake.connector.connect(
 
 )
 
-sql_file = '$GITHUB_WORKSPACE/dbscripts/sql_statements.sql'
+sql_file = 'dbscripts/sql_statements.sql'
 
 with open(sql_file, 'r' , encoding='utf-8') as f :
     for cs in cnn.execute_stream(f) :
