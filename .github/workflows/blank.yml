@@ -23,14 +23,14 @@ jobs:
         with:
           python-version: 3.8.x
 
-      - name: Run schemachange
+      - name: Run Snowflake-connector-python
         
         run:  |
           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
           python --version
           echo "Step 1: Installing snowflake-connector-python"
-          pip install -r https://raw.githubusercontent.com/snowflakedb/snowflake-connector-python/v2.5.1/tested_requirements/requirements_36.reqs
           python -m pip install --upgrade pip
+          pip install -r https://raw.githubusercontent.com/snowflakedb/snowflake-connector-python/v2.5.1/tested_requirements/requirements_36.reqs
           pip install snowflake-connector-python==2.5.1
  
           echo "Step 2: Running python file"
